@@ -59,11 +59,22 @@
   <!-- Contador -->
   <div id="countdown"></div>
 
-  <!-- Botón invisible para música (sobre icono play) -->
-  <div class="btn-invisible"
-       onclick="document.getElementById('audio').play()"
-       style="top:23%; left:50%; transform:translateX(-50%); width:7%; height:3%;">
-  </div>
+  <!-- Botón invisible para música (sobre icono play), ahora reproduce y pausa -->
+<div class="btn-invisible"
+     onclick="toggleAudio()"
+     style="top:23%; left:50%; transform:translateX(-50%); width:7%; height:3%;">
+</div>
+
+<script>
+function toggleAudio() {
+    var audio = document.getElementById('audio');
+    if (audio.paused) {
+        audio.play();
+    } else {
+        audio.pause();
+    }
+}
+</script>
 
   <!-- Botón invisible para ubicación (sobre icono ubicación) -->
   <a href="https://maps.app.goo.gl/FT7mFgKbXzcSF8Wh7" target="_blank"
